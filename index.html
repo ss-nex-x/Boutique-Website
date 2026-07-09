@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,12 @@
     <!-- Google Fonts: Playfair Display for Serifs & Inter for Sans-Serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome Icons for clean, thin editorial glyphs -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -60,7 +63,7 @@
             color: #1B1B1B;
             overflow-x: hidden;
         }
-        
+
         .editorial-heading {
             font-family: 'Playfair Display', serif;
             letter-spacing: -0.02em;
@@ -70,9 +73,11 @@
         ::-webkit-scrollbar {
             width: 6px;
         }
+
         ::-webkit-scrollbar-track {
             background: #FAF8F5;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #C8A96A;
             border-radius: 3px;
@@ -82,6 +87,7 @@
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -91,6 +97,7 @@
         .gold-border-glow {
             transition: all 0.4s ease;
         }
+
         .gold-border-glow:hover {
             box-shadow: 0 0 15px rgba(200, 169, 106, 0.2);
             border-color: #C8A96A;
@@ -101,15 +108,18 @@
             box-shadow: 0 0 0 0 rgba(200, 169, 106, 0.7);
             animation: pulse 1.8s infinite;
         }
+
         @keyframes pulse {
             0% {
                 transform: scale(0.95);
                 box-shadow: 0 0 0 0 rgba(200, 169, 106, 0.7);
             }
+
             70% {
                 transform: scale(1);
                 box-shadow: 0 0 0 10px rgba(200, 169, 106, 0);
             }
+
             100% {
                 transform: scale(0.95);
                 box-shadow: 0 0 0 0 rgba(200, 169, 106, 0);
@@ -117,13 +127,16 @@
         }
     </style>
 </head>
+
 <body class="antialiased">
 
     <!-- Premium Toast Notifications System -->
     <div id="toast-container" class="fixed top-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
 
     <!-- NAVIGATION HEADER -->
-    <header class="fixed top-0 left-0 w-full z-40 bg-primary/90 backdrop-blur-md border-b border-secondary transition-all duration-300" id="main-header">
+    <header
+        class="fixed top-0 left-0 w-full z-40 bg-primary/90 backdrop-blur-md border-b border-secondary transition-all duration-300"
+        id="main-header">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
             <!-- Left Side Links -->
             <nav class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-[0.2em] text-dark/80 font-medium">
@@ -134,24 +147,29 @@
             </nav>
 
             <!-- Brand Logo -->
-            <a href="#" class="editorial-heading text-2xl lg:text-3xl tracking-[0.15em] font-medium text-dark uppercase flex flex-col items-center">
+            <a href="#"
+                class="editorial-heading text-2xl lg:text-3xl tracking-[0.15em] font-medium text-dark uppercase flex flex-col items-center">
                 AURA
                 <span class="text-[8px] tracking-[0.4em] font-sans -mt-1 text-accent">HAUTE COUTURE</span>
             </a>
 
             <!-- Right Actions -->
             <div class="flex items-center gap-6 text-dark">
-                <button onclick="toggleStylingModal()" class="hidden sm:inline-flex items-center text-xs uppercase tracking-widest text-accent font-medium border border-accent/30 hover:border-accent hover:bg-accent hover:text-white px-4 py-2 transition-all duration-300 rounded">
+                <button onclick="toggleStylingModal()"
+                    class="hidden sm:inline-flex items-center text-xs uppercase tracking-widest text-accent font-medium border border-accent/30 hover:border-accent hover:bg-accent hover:text-white px-4 py-2 transition-all duration-300 rounded">
                     Book Stylist
                 </button>
-                <button class="hover:text-accent transition-colors text-sm" onclick="showNotification('Search is active. Discovering our catalogue...', 'info')">
+                <button class="hover:text-accent transition-colors text-sm"
+                    onclick="showNotification('Search is active. Discovering our catalogue...', 'info')">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-                <button class="relative hover:text-accent transition-colors text-sm" onclick="showNotification('Bag is currently empty. Shop your favorites!', 'info')">
+                <button class="relative hover:text-accent transition-colors text-sm"
+                    onclick="showNotification('Bag is currently empty. Shop your favorites!', 'info')">
                     <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="absolute -top-1.5 -right-1.5 bg-accent text-[8px] text-white w-4 h-4 rounded-full flex items-center justify-center font-sans">0</span>
+                    <span
+                        class="absolute -top-1.5 -right-1.5 bg-accent text-[8px] text-white w-4 h-4 rounded-full flex items-center justify-center font-sans">0</span>
                 </button>
-                
+
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="lg:hidden text-lg focus:outline-none" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars-staggered"></i>
@@ -160,12 +178,18 @@
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-primary border-t border-secondary py-6 px-8 flex flex-col gap-4 text-sm tracking-wider uppercase font-medium">
-            <a href="#collections" class="py-2 border-b border-secondary/50 hover:text-accent" onclick="toggleMobileMenu()">Collections</a>
-            <a href="#philosophy" class="py-2 border-b border-secondary/50 hover:text-accent" onclick="toggleMobileMenu()">Philosophy</a>
-            <a href="#inspiration" class="py-2 border-b border-secondary/50 hover:text-accent" onclick="toggleMobileMenu()">Inspiration</a>
-            <a href="#trending" class="py-2 border-b border-secondary/50 hover:text-accent" onclick="toggleMobileMenu()">Trending</a>
-            <button onclick="toggleStylingModal(); toggleMobileMenu();" class="mt-4 w-full text-center py-3 border border-accent text-accent uppercase text-xs tracking-widest">
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-primary border-t border-secondary py-6 px-8 flex flex-col gap-4 text-sm tracking-wider uppercase font-medium">
+            <a href="#collections" class="py-2 border-b border-secondary/50 hover:text-accent"
+                onclick="toggleMobileMenu()">Collections</a>
+            <a href="#philosophy" class="py-2 border-b border-secondary/50 hover:text-accent"
+                onclick="toggleMobileMenu()">Philosophy</a>
+            <a href="#inspiration" class="py-2 border-b border-secondary/50 hover:text-accent"
+                onclick="toggleMobileMenu()">Inspiration</a>
+            <a href="#trending" class="py-2 border-b border-secondary/50 hover:text-accent"
+                onclick="toggleMobileMenu()">Trending</a>
+            <button onclick="toggleStylingModal(); toggleMobileMenu();"
+                class="mt-4 w-full text-center py-3 border border-accent text-accent uppercase text-xs tracking-widest">
                 Book Personal Styling
             </button>
         </div>
@@ -173,37 +197,41 @@
 
     <!-- SECTION 01: PREMIUM HERO EXPERIENCE -->
     <section class="relative min-h-screen flex flex-col lg:flex-row items-center pt-20 bg-primary overflow-hidden">
-        
+
         <!-- Left Side Content -->
         <div class="w-full lg:w-1/2 h-full flex items-center px-6 md:px-12 lg:px-20 py-12 lg:py-20 z-10">
             <div class="max-w-xl space-y-6 md:space-y-8 animate-fade-in-up">
                 <!-- Mini Tagline -->
                 <div class="flex items-center gap-3">
                     <span class="h-[1px] w-8 bg-accent"></span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-accent font-medium">AURA COLLECTION 2026</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-accent font-medium">AURA
+                        COLLECTION 2026</span>
                 </div>
-                
+
                 <!-- Editorial Headline -->
                 <h1 class="editorial-heading text-4xl sm:text-5xl md:text-6xl text-dark leading-[1.1] font-medium">
                     Crafted for Women Who Love <br>
                     <span class="italic text-accent font-normal">Timeless Fashion</span>
                 </h1>
-                
+
                 <!-- Description -->
                 <p class="text-sm md:text-base text-dark/70 font-light leading-relaxed max-w-lg">
-                    Discover a luxury sanctuary where couture matches your personal essence. Our handpicked designs honor master craftmanship, premium sustainable silk, and the modern woman's natural elegance.
+                    Discover a luxury sanctuary where couture matches your personal essence. Our handpicked designs
+                    honor master craftmanship, premium sustainable silk, and the modern woman's natural elegance.
                 </p>
-                
+
                 <!-- Call-to-actions -->
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                    <a href="#collections" class="text-center bg-dark text-white text-xs uppercase tracking-[0.2em] px-8 py-4 hover:bg-accent transition-colors duration-300 shadow-md">
+                    <a href="#collections"
+                        class="text-center bg-dark text-white text-xs uppercase tracking-[0.2em] px-8 py-4 hover:bg-accent transition-colors duration-300 shadow-md">
                         Explore Collection
                     </a>
-                    <button onclick="toggleStylingModal()" class="text-center border border-dark/20 text-dark text-xs uppercase tracking-[0.2em] px-8 py-4 hover:border-accent hover:text-accent transition-all duration-300">
+                    <button onclick="toggleStylingModal()"
+                        class="text-center border border-dark/20 text-dark text-xs uppercase tracking-[0.2em] px-8 py-4 hover:border-accent hover:text-accent transition-all duration-300">
                         Book Personal Styling
                     </button>
                 </div>
-                
+
                 <!-- Scrolling indicator decoration -->
                 <div class="hidden lg:flex items-center gap-4 text-[10px] tracking-widest uppercase text-dark/40 pt-12">
                     <span>SCROLL TO DISCOVER</span>
@@ -217,23 +245,24 @@
         <!-- Right Side Media (Editorial Model Image) -->
         <div class="w-full lg:w-1/2 h-[55vh] lg:h-[calc(100vh-80px)] relative overflow-hidden group">
             <!-- Overlaid Translucent Background Typography -->
-            <div class="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-10 overflow-hidden">
-                <span class="editorial-heading text-[10vw] font-bold text-white/10 tracking-widest uppercase whitespace-nowrap">
+            <div
+                class="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-10 overflow-hidden">
+                <span
+                    class="editorial-heading text-[10vw] font-bold text-white/10 tracking-widest uppercase whitespace-nowrap">
                     NEW COLLECTION
                 </span>
             </div>
-            
+
             <!-- Slow Zooming Model Picture -->
-            <img 
-                data-img-key="hero.showcase"
-                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" 
-                alt="Aura Model Showcase" 
+            <img data-img-key="hero.showcase"
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
+                alt="Aura Model Showcase"
                 class="w-full h-full object-cover object-top animate-slow-zoom transition-transform duration-700"
-                onerror="this.src='https://placehold.co/800x1200/C8A96A/ffffff?text=Luxury+Model'"
-            >
-            
+                onerror="this.src='https://placehold.co/800x1200/C8A96A/ffffff?text=Luxury+Model'">
+
             <!-- Floating Decorative Sketch Accent Overlaid -->
-            <div class="absolute bottom-8 right-8 bg-white/80 backdrop-blur-md p-6 border border-white/20 max-w-xs shadow-xl hidden sm:flex items-start gap-4 animate-float-gentle z-20">
+            <div
+                class="absolute bottom-8 right-8 bg-white/80 backdrop-blur-md p-6 border border-white/20 max-w-xs shadow-xl hidden sm:flex items-start gap-4 animate-float-gentle z-20">
                 <span class="text-accent text-2xl font-serif">“</span>
                 <div>
                     <p class="text-xs italic text-dark/80 leading-relaxed font-serif">
@@ -244,7 +273,9 @@
             </div>
 
             <!-- Soft Overlay Gradient -->
-            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary to-transparent lg:hidden pointer-events-none"></div>
+            <div
+                class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary to-transparent lg:hidden pointer-events-none">
+            </div>
         </div>
     </section>
 
@@ -252,65 +283,75 @@
     <section id="philosophy" class="py-20 lg:py-32 bg-secondary relative overflow-hidden">
         <!-- Abstract Gold Water Circle Accent -->
         <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full border border-accent/10 pointer-events-none"></div>
-        
+
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 <!-- Left: Boutique Interior Photography with Floating Elements -->
                 <div class="w-full lg:w-1/2 relative">
                     <div class="aspect-[4/5] overflow-hidden rounded shadow-2xl relative">
-                        <img 
-                            data-img-key="about.philosophy_atrium"
-                            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" 
-                            alt="Boutique Atrium" 
+                        <img data-img-key="about.philosophy_atrium"
+                            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
+                            alt="Boutique Atrium"
                             class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                            onerror="this.src='https://placehold.co/800x1000/C8A96A/ffffff?text=The+Boutique'"
-                        >
+                            onerror="this.src='https://placehold.co/800x1000/C8A96A/ffffff?text=The+Boutique'">
                         <div class="absolute inset-0 bg-dark/10"></div>
                     </div>
                     <!-- Decorative Floating Badge -->
-                    <div class="absolute -bottom-6 -right-6 bg-primary px-8 py-6 shadow-xl border border-secondary text-center hidden md:block">
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-primary px-8 py-6 shadow-xl border border-secondary text-center hidden md:block">
                         <p class="editorial-heading text-3xl font-bold text-accent">100%</p>
-                        <p class="text-[9px] tracking-widest uppercase font-medium text-dark/60 mt-1">Organic Silk &amp; Cashmere</p>
+                        <p class="text-[9px] tracking-widest uppercase font-medium text-dark/60 mt-1">Organic Silk &amp;
+                            Cashmere</p>
                     </div>
                 </div>
 
                 <!-- Right: Philosophy & Features -->
                 <div class="w-full lg:w-1/2 space-y-8">
                     <div class="space-y-4">
-                        <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold">ABOUT THE BOUTIQUE</span>
+                        <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold">ABOUT THE
+                            BOUTIQUE</span>
                         <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark leading-tight">
                             Crafted with Passion, <br>Worn with Dignity
                         </h2>
                         <div class="h-[2px] w-16 bg-accent my-4"></div>
                         <p class="text-dark/70 font-light leading-relaxed text-sm md:text-base">
-                            At AURA, we believe fashion should exist in harmony with art. Each silhouette is thoughtfully crafted using slow-fashion techniques to create exceptional, heirloom-quality wardrobe statements. Our master craftspeople spend hours detailing every seam to guarantee a flawless drape.
+                            At AURA, we believe fashion should exist in harmony with art. Each silhouette is
+                            thoughtfully crafted using slow-fashion techniques to create exceptional, heirloom-quality
+                            wardrobe statements. Our master craftspeople spend hours detailing every seam to guarantee a
+                            flawless drape.
                         </p>
                     </div>
 
                     <!-- 3 Elegant Feature Cards (Animated Upward on hover/load) -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-                        <div class="bg-primary p-6 rounded border border-accent/15 hover:border-accent hover:-translate-y-2 transition-all duration-300">
+                        <div
+                            class="bg-primary p-6 rounded border border-accent/15 hover:border-accent hover:-translate-y-2 transition-all duration-300">
                             <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center mb-3">
                                 <i class="fa-solid fa-leaf text-xs text-accent"></i>
                             </div>
                             <h3 class="font-medium text-sm text-dark tracking-wide uppercase">Premium Fabrics</h3>
-                            <p class="text-xs text-dark/60 font-light mt-1.5 leading-relaxed">Sourced from certified ethical organic producers globally.</p>
+                            <p class="text-xs text-dark/60 font-light mt-1.5 leading-relaxed">Sourced from certified
+                                ethical organic producers globally.</p>
                         </div>
 
-                        <div class="bg-primary p-6 rounded border border-accent/15 hover:border-accent hover:-translate-y-2 transition-all duration-300">
+                        <div
+                            class="bg-primary p-6 rounded border border-accent/15 hover:border-accent hover:-translate-y-2 transition-all duration-300">
                             <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center mb-3">
                                 <i class="fa-solid fa-scissors text-xs text-accent"></i>
                             </div>
                             <h3 class="font-medium text-sm text-dark tracking-wide uppercase">Handpicked Designs</h3>
-                            <p class="text-xs text-dark/60 font-light mt-1.5 leading-relaxed">Curated collections with singular designer identities.</p>
+                            <p class="text-xs text-dark/60 font-light mt-1.5 leading-relaxed">Curated collections with
+                                singular designer identities.</p>
                         </div>
 
-                        <div class="bg-primary p-6 rounded border border-accent/15 hover:border-accent hover:-translate-y-2 transition-all duration-300">
+                        <div
+                            class="bg-primary p-6 rounded border border-accent/15 hover:border-accent hover:-translate-y-2 transition-all duration-300">
                             <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center mb-3">
                                 <i class="fa-solid fa-crown text-xs text-accent"></i>
                             </div>
                             <h3 class="font-medium text-sm text-dark tracking-wide uppercase">Exclusive Lines</h3>
-                            <p class="text-xs text-dark/60 font-light mt-1.5 leading-relaxed">Extremely limited runs of up to fifty pieces worldwide.</p>
+                            <p class="text-xs text-dark/60 font-light mt-1.5 leading-relaxed">Extremely limited runs of
+                                up to fifty pieces worldwide.</p>
                         </div>
                     </div>
                 </div>
@@ -321,85 +362,99 @@
     <!-- SECTION 03: FEATURED COLLECTIONS -->
     <section id="collections" class="py-20 lg:py-32 bg-primary">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
+
             <!-- Editorial Header Grid -->
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div>
-                    <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block mb-2">SEASON CURATIONS</span>
-                    <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark">Oversized Curated Collections</h2>
+                    <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block mb-2">SEASON
+                        CURATIONS</span>
+                    <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark">Oversized Curated
+                        Collections</h2>
                 </div>
                 <p class="text-dark/60 max-w-md font-light text-sm leading-relaxed">
-                    Indulge in a spectrum of sophisticated ensembles crafted for life’s highest moments. From relaxed midday elegance to prestigious twilight glamour.
+                    Indulge in a spectrum of sophisticated ensembles crafted for life’s highest moments. From relaxed
+                    midday elegance to prestigious twilight glamour.
                 </p>
             </div>
 
             <!-- Grid of 4 Oversized Editorial Blocks -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                
+
                 <!-- Category 1: Summer Linen -->
                 <div class="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded bg-secondary">
-                    <img 
-                        data-img-key="categories.summer_linen"
-                        src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?auto=format&fit=crop&w=800&q=80" 
-                        alt="Summer Linen Collection" 
+                    <img data-img-key="categories.summer_linen"
+                        src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?auto=format&fit=crop&w=800&q=80"
+                        alt="Summer Linen Collection"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         loading="lazy"
-                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Summer+Linen'"
-                    >
+                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Summer+Linen'">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">01 / BREATHABLE CHIC</span>
-                        <h3 class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">Summer Linen</h3>
-                        <p class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">01 /
+                            BREATHABLE CHIC</span>
+                        <h3
+                            class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Summer Linen</h3>
+                        <p
+                            class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             Luxuriously woven, cooling flax threads customized for exquisite sun-drenched itineraries.
                         </p>
-                        <a href="#trending" class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
+                        <a href="#trending"
+                            class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
                             Discover Line
                         </a>
                     </div>
                 </div>
 
                 <!-- Category 2: Wedding Collection -->
-                <div class="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded bg-secondary mt-0 md:mt-12">
-                    <img 
-                        data-img-key="categories.wedding_selection"
-                        src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80" 
-                        alt="Wedding Collection" 
+                <div
+                    class="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded bg-secondary mt-0 md:mt-12">
+                    <img data-img-key="categories.wedding_selection"
+                        src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80"
+                        alt="Wedding Collection"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         loading="lazy"
-                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Wedding+Collection'"
-                    >
+                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Wedding+Collection'">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">02 / UNFORGETTABLE MOMENTS</span>
-                        <h3 class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">Wedding Selection</h3>
-                        <p class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">02 /
+                            UNFORGETTABLE MOMENTS</span>
+                        <h3
+                            class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Wedding Selection</h3>
+                        <p
+                            class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             Sensational gowns crafted to frame everlasting memories with delicate lace.
                         </p>
-                        <a href="#trending" class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
+                        <a href="#trending"
+                            class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
                             Discover Line
                         </a>
                     </div>
                 </div>
 
                 <!-- Category 3: Office Wear -->
-                <div class="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded bg-secondary -mt-0 md:-mt-12">
-                    <img 
-                        data-img-key="categories.office_haute"
-                        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=80" 
-                        alt="Office Wear" 
+                <div
+                    class="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded bg-secondary -mt-0 md:-mt-12">
+                    <img data-img-key="categories.office_haute"
+                        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=80"
+                        alt="Office Wear"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         loading="lazy"
-                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Office+Wear'"
-                    >
+                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Office+Wear'">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">03 / MODERN POWER</span>
-                        <h3 class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">Office Haute</h3>
-                        <p class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">03 / MODERN
+                            POWER</span>
+                        <h3
+                            class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Office Haute</h3>
+                        <p
+                            class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             Structured silk jackets, relaxed-tailor trousers, and commanding workwear.
                         </p>
-                        <a href="#trending" class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
+                        <a href="#trending"
+                            class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
                             Discover Line
                         </a>
                     </div>
@@ -407,22 +462,26 @@
 
                 <!-- Category 4: Evening Glamour -->
                 <div class="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded bg-secondary">
-                    <img 
-                        data-img-key="categories.evening_glamour"
-                        src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" 
-                        alt="Evening Glamour" 
+                    <img data-img-key="categories.evening_glamour"
+                        src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80"
+                        alt="Evening Glamour"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         loading="lazy"
-                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Evening+Glamour'"
-                    >
+                        onerror="this.src='https://placehold.co/800x1000/F3EEE8/C8A96A?text=Evening+Glamour'">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">04 / MYSTIQUE NIGHTS</span>
-                        <h3 class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">Evening Glamour</h3>
-                        <p class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            Stunning satins and flowing black fabrics that command deep attention at moonlight gatherings.
+                        <span class="text-[10px] tracking-[0.3em] text-accent uppercase font-semibold mb-2">04 /
+                            MYSTIQUE NIGHTS</span>
+                        <h3
+                            class="editorial-heading text-2xl sm:text-3xl font-medium mb-2 group-hover:translate-x-2 transition-transform duration-300">
+                            Evening Glamour</h3>
+                        <p
+                            class="text-xs text-white/80 max-w-sm font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Stunning satins and flowing black fabrics that command deep attention at moonlight
+                            gatherings.
                         </p>
-                        <a href="#trending" class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
+                        <a href="#trending"
+                            class="w-fit border-b border-accent text-accent uppercase tracking-[0.2em] text-xs pb-1 font-medium hover:text-white hover:border-white transition-colors duration-300">
                             Discover Line
                         </a>
                     </div>
@@ -435,51 +494,64 @@
     <!-- SECTION 04: SIGNATURE COLLECTION -->
     <section class="py-20 bg-secondary overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
+
             <div class="flex items-center justify-between mb-12">
                 <div>
-                    <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block mb-2">SIGNATURE SPOTLIGHTS</span>
-                    <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark">The Signature Collection</h2>
+                    <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block mb-2">SIGNATURE
+                        SPOTLIGHTS</span>
+                    <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark">The Signature Collection
+                    </h2>
                 </div>
-                
+
                 <!-- Slide Buttons -->
                 <div class="flex items-center gap-4">
-                    <button id="sig-slide-prev" class="w-12 h-12 rounded-full border border-dark/10 hover:border-accent hover:text-accent transition-all duration-300 flex items-center justify-center text-dark" aria-label="Previous Slide">
+                    <button id="sig-slide-prev"
+                        class="w-12 h-12 rounded-full border border-dark/10 hover:border-accent hover:text-accent transition-all duration-300 flex items-center justify-center text-dark"
+                        aria-label="Previous Slide">
                         <i class="fa-solid fa-chevron-left text-sm"></i>
                     </button>
-                    <button id="sig-slide-next" class="w-12 h-12 rounded-full border border-dark/10 hover:border-accent hover:text-accent transition-all duration-300 flex items-center justify-center text-dark" aria-label="Next Slide">
+                    <button id="sig-slide-next"
+                        class="w-12 h-12 rounded-full border border-dark/10 hover:border-accent hover:text-accent transition-all duration-300 flex items-center justify-center text-dark"
+                        aria-label="Next Slide">
                         <i class="fa-solid fa-chevron-right text-sm"></i>
                     </button>
                 </div>
             </div>
 
             <!-- Horizontal Catalog Container -->
-            <div id="sig-scroller" class="flex gap-8 overflow-x-auto scroll-smooth hide-scrollbar snap-x snap-mandatory py-4">
-                
+            <div id="sig-scroller"
+                class="flex gap-8 overflow-x-auto scroll-smooth hide-scrollbar snap-x snap-mandatory py-4">
+
                 <!-- Card 1 -->
-                <div class="snap-start shrink-0 w-[80vw] sm:w-[50vw] lg:w-[35vw] bg-primary border border-secondary rounded p-6 shadow-sm group">
+                <div
+                    class="snap-start shrink-0 w-[80vw] sm:w-[50vw] lg:w-[35vw] bg-primary border border-secondary rounded p-6 shadow-sm group">
                     <div class="aspect-[3/4] overflow-hidden rounded relative mb-6">
-                        <img 
-                            data-img-key="signature_collection.ivory_silk_jumpsuit"
-                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" 
-                            alt="The Aura Muse Suit" 
+                        <img data-img-key="signature_collection.ivory_silk_jumpsuit"
+                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80"
+                            alt="The Aura Muse Suit"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            loading="lazy"
-                        >
-                        <span class="absolute top-4 left-4 bg-accent text-white text-[9px] uppercase tracking-widest px-3 py-1 font-semibold rounded-sm">EXCLUSIVE</span>
+                            loading="lazy">
+                        <span
+                            class="absolute top-4 left-4 bg-accent text-white text-[9px] uppercase tracking-widest px-3 py-1 font-semibold rounded-sm">EXCLUSIVE</span>
                     </div>
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center text-[10px] uppercase tracking-widest text-accent font-semibold">
+                        <div
+                            class="flex justify-between items-center text-[10px] uppercase tracking-widest text-accent font-semibold">
                             <span>AURA MUSE SILK</span>
                             <span>PRE-SPRING 2026</span>
                         </div>
-                        <h4 class="editorial-heading text-xl text-dark group-hover:text-accent transition-colors duration-300">The Ivory Silk Jumpsuit</h4>
+                        <h4
+                            class="editorial-heading text-xl text-dark group-hover:text-accent transition-colors duration-300">
+                            Royal silk saree</h4>
                         <p class="text-xs text-dark/60 font-light leading-relaxed line-clamp-2">
-                            Immaculately tailored waistlines meet pure luxury, offering comfortable day-long sophistication.
+                            Immaculately tailored waistlines meet pure luxury, offering comfortable day-long
+                            sophistication.
                         </p>
                         <div class="pt-4 border-t border-secondary flex justify-between items-center">
-                            <span class="text-sm font-semibold text-dark">$420.00</span>
-                            <button onclick="openQuickView('The Ivory Silk Jumpsuit', '$420.00', this.closest('.group').querySelector('img').src, 'Experience uncompromised comfort crafted out of 100% fine Italian mulberry silk. Hand finished with delicate Mother-of-Pearl details.')" class="text-xs uppercase tracking-widest text-accent hover:text-dark font-medium transition-colors">
+                            <span class="text-sm font-semibold text-dark">₹420.00</span>
+                            <button
+                                onclick="openQuickView('The Ivory Silk Jumpsuit', '$420.00', this.closest('.group').querySelector('img').src, 'Experience uncompromised comfort crafted out of 100% fine Italian mulberry silk. Hand finished with delicate Mother-of-Pearl details.')"
+                                class="text-xs uppercase tracking-widest text-accent hover:text-dark font-medium transition-colors">
                                 Explore <i class="fa-solid fa-arrow-right-long ml-1 text-[10px]"></i>
                             </button>
                         </div>
@@ -487,29 +559,35 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="snap-start shrink-0 w-[80vw] sm:w-[50vw] lg:w-[35vw] bg-primary border border-secondary rounded p-6 shadow-sm group">
+                <div
+                    class="snap-start shrink-0 w-[80vw] sm:w-[50vw] lg:w-[35vw] bg-primary border border-secondary rounded p-6 shadow-sm group">
                     <div class="aspect-[3/4] overflow-hidden rounded relative mb-6">
-                        <img 
-                            data-img-key="signature_collection.linen_draped_dress"
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" 
-                            alt="Linen Draped Dress" 
+                        <img data-img-key="signature_collection.linen_draped_dress"
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
+                            alt="Linen Draped Dress"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            loading="lazy"
-                        >
-                        <span class="absolute top-4 left-4 bg-accent text-white text-[9px] uppercase tracking-widest px-3 py-1 font-semibold rounded-sm">SIGNATURE</span>
+                            loading="lazy">
+                        <span
+                            class="absolute top-4 left-4 bg-accent text-white text-[9px] uppercase tracking-widest px-3 py-1 font-semibold rounded-sm">SIGNATURE</span>
                     </div>
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center text-[10px] uppercase tracking-widest text-accent font-semibold">
+                        <div
+                            class="flex justify-between items-center text-[10px] uppercase tracking-widest text-accent font-semibold">
                             <span>MEDITERRANEAN WIND</span>
                             <span>SUMMER 2026</span>
                         </div>
-                        <h4 class="editorial-heading text-xl text-dark group-hover:text-accent transition-colors duration-300">Linen Draped Dress</h4>
+                        <h4
+                            class="editorial-heading text-xl text-dark group-hover:text-accent transition-colors duration-300">
+                            Designer Anarkali Collection</h4>
                         <p class="text-xs text-dark/60 font-light leading-relaxed line-clamp-2">
-                            Featuring a gorgeous asymmetrical hemline and open-back tailored lacing inspired by Santorini.
+                            Featuring a gorgeous asymmetrical hemline and open-back tailored lacing inspired by
+                            Santorini.
                         </p>
                         <div class="pt-4 border-t border-secondary flex justify-between items-center">
-                            <span class="text-sm font-semibold text-dark">$290.00</span>
-                            <button onclick="openQuickView('Linen Draped Dress', '$290.00', this.closest('.group').querySelector('img').src, 'Beautifully light and comfortable organic linen woven with breathable cotton accents for warm climate elegance.')" class="text-xs uppercase tracking-widest text-accent hover:text-dark font-medium transition-colors">
+                            <span class="text-sm font-semibold text-dark">290.00</span>
+                            <button
+                                onclick="openQuickView('Linen Draped Dress', '$290.00', this.closest('.group').querySelector('img').src, 'Beautifully light and comfortable organic linen woven with breathable cotton accents for warm climate elegance.')"
+                                class="text-xs uppercase tracking-widest text-accent hover:text-dark font-medium transition-colors">
                                 Explore <i class="fa-solid fa-arrow-right-long ml-1 text-[10px]"></i>
                             </button>
                         </div>
@@ -517,29 +595,35 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="snap-start shrink-0 w-[80vw] sm:w-[50vw] lg:w-[35vw] bg-primary border border-secondary rounded p-6 shadow-sm group">
+                <div
+                    class="snap-start shrink-0 w-[80vw] sm:w-[50vw] lg:w-[35vw] bg-primary border border-secondary rounded p-6 shadow-sm group">
                     <div class="aspect-[3/4] overflow-hidden rounded relative mb-6">
-                        <img 
-                            data-img-key="signature_collection.fine_cashmere_trench"
-                            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" 
-                            alt="Cashmere Trench Coat" 
+                        <img data-img-key="signature_collection.fine_cashmere_trench"
+                            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80"
+                            alt="Cashmere Trench Coat"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            loading="lazy"
-                        >
-                        <span class="absolute top-4 left-4 bg-accent text-white text-[9px] uppercase tracking-widest px-3 py-1 font-semibold rounded-sm">LIMITED</span>
+                            loading="lazy">
+                        <span
+                            class="absolute top-4 left-4 bg-accent text-white text-[9px] uppercase tracking-widest px-3 py-1 font-semibold rounded-sm">LIMITED</span>
                     </div>
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center text-[10px] uppercase tracking-widest text-accent font-semibold">
+                        <div
+                            class="flex justify-between items-center text-[10px] uppercase tracking-widest text-accent font-semibold">
                             <span>COZY LUXE</span>
                             <span>WINTER 2026</span>
                         </div>
-                        <h4 class="editorial-heading text-xl text-dark group-hover:text-accent transition-colors duration-300">Fine Cashmere Trench</h4>
+                        <h4
+                            class="editorial-heading text-xl text-dark group-hover:text-accent transition-colors duration-300">
+                            Fine Cashmere Trench</h4>
                         <p class="text-xs text-dark/60 font-light leading-relaxed line-clamp-2">
-                            Woven meticulously from pristine inner-Mongolian cashmere. Effortless weight yet beautiful warmth.
+                            Woven meticulously from pristine inner-Mongolian cashmere. Effortless weight yet beautiful
+                            warmth.
                         </p>
                         <div class="pt-4 border-t border-secondary flex justify-between items-center">
                             <span class="text-sm font-semibold text-dark">$750.00</span>
-                            <button onclick="openQuickView('Fine Cashmere Trench', '$750.00', this.closest('.group').querySelector('img').src, 'Wrap yourself in unparalleled prestige. Our double-faced pure cashmere wool tailored silhouette commands supreme confidence.')" class="text-xs uppercase tracking-widest text-accent hover:text-dark font-medium transition-colors">
+                            <button
+                                onclick="openQuickView('Fine Cashmere Trench', '$750.00', this.closest('.group').querySelector('img').src, 'Wrap yourself in unparalleled prestige. Our double-faced pure cashmere wool tailored silhouette commands supreme confidence.')"
+                                class="text-xs uppercase tracking-widest text-accent hover:text-dark font-medium transition-colors">
                                 Explore <i class="fa-solid fa-arrow-right-long ml-1 text-[10px]"></i>
                             </button>
                         </div>
@@ -554,12 +638,10 @@
     <section class="relative py-32 lg:py-48 bg-dark text-white overflow-hidden">
         <!-- Parallax Background Image with Subtle Dark Overlay -->
         <div class="absolute inset-0">
-            <img 
-                data-img-key="quote_section.background_parallax"
-                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600&q=80" 
-                alt="Emotional luxury silhouette" 
-                class="w-full h-full object-cover opacity-30 select-none pointer-events-none"
-            >
+            <img data-img-key="quote_section.background_parallax"
+                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600&q=80"
+                alt="Emotional luxury silhouette"
+                class="w-full h-full object-cover opacity-30 select-none pointer-events-none">
             <div class="absolute inset-0 bg-dark/75"></div>
         </div>
 
@@ -567,22 +649,24 @@
             <div class="inline-flex items-center justify-center gap-2 text-accent">
                 <i class="fa-solid fa-quote-left text-xl lg:text-3xl"></i>
             </div>
-            
+
             <h2 class="editorial-heading text-3xl sm:text-5xl lg:text-6xl text-white font-light italic leading-tight">
                 “Fashion is the language of confidence.”
             </h2>
-            
+
             <p class="text-xs sm:text-sm tracking-[0.2em] uppercase text-accent font-medium">
                 — AURA BOUTIQUE PHILOSOPHY
             </p>
-            
+
             <div class="h-[1px] w-20 bg-accent/30 mx-auto my-6"></div>
-            
+
             <p class="text-sm md:text-base text-white/70 max-w-2xl mx-auto font-light leading-relaxed">
-                We design with the knowledge that clothing is an extension of our souls. Our collections speak volumes before you say a single word, expressing quiet, luxury strength and unmistakable poise.
+                We design with the knowledge that clothing is an extension of our souls. Our collections speak volumes
+                before you say a single word, expressing quiet, luxury strength and unmistakable poise.
             </p>
-            
-            <button onclick="toggleStylingModal()" class="inline-block bg-accent hover:bg-accentDark text-white text-xs uppercase tracking-[0.2em] px-8 py-4 transition-colors duration-300">
+
+            <button onclick="toggleStylingModal()"
+                class="inline-block bg-accent hover:bg-accentDark text-white text-xs uppercase tracking-[0.2em] px-8 py-4 transition-colors duration-300">
                 Read Our Story
             </button>
         </div>
@@ -591,11 +675,12 @@
     <!-- SECTION 06: TRENDING THIS WEEK -->
     <section id="trending" class="py-20 lg:py-32 bg-primary">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
+
             <!-- Section Header -->
             <div class="text-center max-w-xl mx-auto mb-16 space-y-4">
                 <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block">THE RADAR</span>
-                <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Trending This Week</h2>
+                <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Trending This Week
+                </h2>
                 <div class="h-[2px] w-12 bg-accent mx-auto"></div>
                 <p class="text-sm text-dark/60 font-light leading-relaxed">
                     A curated collection of pieces that represent this season's most sought-after silhouettes.
@@ -604,32 +689,33 @@
 
             <!-- Product Cards Grid (4 Columns) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                
+
                 <!-- Product 1 -->
-                <div class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
+                <div
+                    class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
                     <!-- Wishlist Button -->
-                    <button onclick="toggleWishlist(this, 'Silk Evening slip')" class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
+                    <button onclick="toggleWishlist(this, 'Silk Evening slip')"
+                        class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                     <!-- Dual Image on Hover -->
                     <div class="aspect-[3/4] overflow-hidden rounded relative mb-4">
-                        <img 
-                            data-img-key="trending_this_week.silk_evening_slip.primary"
-                            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" 
-                            alt="Silk Evening Slip Primary" 
+                        <img data-img-key="trending_this_week.silk_evening_slip.primary"
+                            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80"
+                            alt="Silk Evening Slip Primary"
                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
-                            loading="lazy"
-                        >
-                        <img 
-                            data-img-key="trending_this_week.silk_evening_slip.secondary"
-                            src="https://images.unsplash.com/photo-1551854838-212c50b4c184?auto=format&fit=crop&w=500&q=80" 
-                            alt="Silk Evening Slip Secondary" 
+                            loading="lazy">
+                        <img data-img-key="trending_this_week.silk_evening_slip.secondary"
+                            src="https://images.unsplash.com/photo-1551854838-212c50b4c184?auto=format&fit=crop&w=500&q=80"
+                            alt="Silk Evening Slip Secondary"
                             class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                            loading="lazy"
-                        >
+                            loading="lazy">
                         <!-- Quick View Overlay Button -->
-                        <div class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openQuickView('Silk Evening Slip', '$310.00', this.closest('.group').querySelector('img').src, 'Fluid, dynamic slip with adjustable slim straps. Designed out of pure lightweight silk charmeuse.')" class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
+                        <div
+                            class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                onclick="openQuickView('Silk Evening Slip', '$310.00', this.closest('.group').querySelector('img').src, 'Fluid, dynamic slip with adjustable slim straps. Designed out of pure lightweight silk charmeuse.')"
+                                class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
                                 Quick View
                             </button>
                         </div>
@@ -645,27 +731,28 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
-                    <button onclick="toggleWishlist(this, 'Pleated Crepe Top')" class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
+                <div
+                    class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
+                    <button onclick="toggleWishlist(this, 'Pleated Crepe Top')"
+                        class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                     <div class="aspect-[3/4] overflow-hidden rounded relative mb-4">
-                        <img 
-                            data-img-key="trending_this_week.pleated_crepe_top.primary"
-                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" 
-                            alt="Pleated Crepe Top Primary" 
+                        <img data-img-key="trending_this_week.pleated_crepe_top.primary"
+                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80"
+                            alt="Pleated Crepe Top Primary"
                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
-                            loading="lazy"
-                        >
-                        <img 
-                            data-img-key="trending_this_week.pleated_crepe_top.secondary"
-                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=80" 
-                            alt="Pleated Crepe Top Secondary" 
+                            loading="lazy">
+                        <img data-img-key="trending_this_week.pleated_crepe_top.secondary"
+                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=80"
+                            alt="Pleated Crepe Top Secondary"
                             class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                            loading="lazy"
-                        >
-                        <div class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openQuickView('Pleated Crepe Top', '$180.00', this.closest('.group').querySelector('img').src, 'Elegant structural origami-pleated sleeveless top in organic textured cotton crepe.')" class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                onclick="openQuickView('Pleated Crepe Top', '$180.00', this.closest('.group').querySelector('img').src, 'Elegant structural origami-pleated sleeveless top in organic textured cotton crepe.')"
+                                class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
                                 Quick View
                             </button>
                         </div>
@@ -680,27 +767,28 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
-                    <button onclick="toggleWishlist(this, 'Sienna Tailored Blazer')" class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
+                <div
+                    class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
+                    <button onclick="toggleWishlist(this, 'Sienna Tailored Blazer')"
+                        class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                     <div class="aspect-[3/4] overflow-hidden rounded relative mb-4">
-                        <img 
-                            data-img-key="trending_this_week.sienna_tailored_blazer.primary"
-                            src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=80" 
-                            alt="Sienna Tailored Blazer Primary" 
+                        <img data-img-key="trending_this_week.sienna_tailored_blazer.primary"
+                            src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=80"
+                            alt="Sienna Tailored Blazer Primary"
                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
-                            loading="lazy"
-                        >
-                        <img 
-                            data-img-key="trending_this_week.sienna_tailored_blazer.secondary"
-                            src="https://images.unsplash.com/photo-1549298916-f5250f50f54b?auto=format&fit=crop&w=500&q=80" 
-                            alt="Sienna Tailored Blazer Secondary" 
+                            loading="lazy">
+                        <img data-img-key="trending_this_week.sienna_tailored_blazer.secondary"
+                            src="https://images.unsplash.com/photo-1549298916-f5250f50f54b?auto=format&fit=crop&w=500&q=80"
+                            alt="Sienna Tailored Blazer Secondary"
                             class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                            loading="lazy"
-                        >
-                        <div class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openQuickView('Sienna Tailored Blazer', '$495.00', this.closest('.group').querySelector('img').src, 'Excellently structured designer blazer. Handpicked high-density wool for executive status.')" class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                onclick="openQuickView('Sienna Tailored Blazer', '$495.00', this.closest('.group').querySelector('img').src, 'Excellently structured designer blazer. Handpicked high-density wool for executive status.')"
+                                class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
                                 Quick View
                             </button>
                         </div>
@@ -709,33 +797,35 @@
                         <h4 class="editorial-heading text-lg text-dark font-medium">Sienna Tailored Blazer</h4>
                         <div class="flex justify-between items-center">
                             <span class="text-sm font-medium text-dark">$495.00</span>
-                            <span class="text-[9px] uppercase tracking-widest text-accent font-semibold">New Arrival</span>
+                            <span class="text-[9px] uppercase tracking-widest text-accent font-semibold">New
+                                Arrival</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
-                <div class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
-                    <button onclick="toggleWishlist(this, 'Ethereal Knit Cardigan')" class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
+                <div
+                    class="group relative bg-secondary p-4 rounded transition-all duration-300 hover:shadow-xl hover:bg-white border border-transparent hover:border-secondary">
+                    <button onclick="toggleWishlist(this, 'Ethereal Knit Cardigan')"
+                        class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-dark/50 hover:text-red-500 transition-colors">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                     <div class="aspect-[3/4] overflow-hidden rounded relative mb-4">
-                        <img 
-                            data-img-key="trending_this_week.ethereal_knit_cardigan.primary"
-                            src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=500&q=80" 
-                            alt="Ethereal Knit Cardigan Primary" 
+                        <img data-img-key="trending_this_week.ethereal_knit_cardigan.primary"
+                            src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=500&q=80"
+                            alt="Ethereal Knit Cardigan Primary"
                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
-                            loading="lazy"
-                        >
-                        <img 
-                            data-img-key="trending_this_week.ethereal_knit_cardigan.secondary"
-                            src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=500&q=80" 
-                            alt="Ethereal Knit Cardigan Secondary" 
+                            loading="lazy">
+                        <img data-img-key="trending_this_week.ethereal_knit_cardigan.secondary"
+                            src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=500&q=80"
+                            alt="Ethereal Knit Cardigan Secondary"
                             class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                            loading="lazy"
-                        >
-                        <div class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openQuickView('Ethereal Knit Cardigan', '$240.00', this.closest('.group').querySelector('img').src, 'Featherweight spun baby alpaca knit cardigan. Softly wraps around your shoulder curves.')" class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-dark/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                onclick="openQuickView('Ethereal Knit Cardigan', '$240.00', this.closest('.group').querySelector('img').src, 'Featherweight spun baby alpaca knit cardigan. Softly wraps around your shoulder curves.')"
+                                class="bg-white text-dark text-[10px] uppercase tracking-widest px-6 py-3 font-semibold hover:bg-accent hover:text-white transition-all">
                                 Quick View
                             </button>
                         </div>
@@ -744,7 +834,8 @@
                         <h4 class="editorial-heading text-lg text-dark font-medium">Ethereal Knit Cardigan</h4>
                         <div class="flex justify-between items-center">
                             <span class="text-sm font-medium text-dark">$240.00</span>
-                            <span class="text-[9px] uppercase tracking-widest text-accent font-semibold">Warm Linen</span>
+                            <span class="text-[9px] uppercase tracking-widest text-accent font-semibold">Warm
+                                Linen</span>
                         </div>
                     </div>
                 </div>
@@ -757,21 +848,26 @@
     <section class="py-20 bg-secondary">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                
+
                 <!-- Card 1: Personal Styling -->
-                <div class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
-                    <div class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                <div
+                    class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
+                    <div
+                        class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
                         <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
                     </div>
                     <h3 class="editorial-heading text-lg font-medium text-dark mb-2">Personal Styling</h3>
                     <p class="text-xs text-dark/60 font-light leading-relaxed">
-                        Schedule a private session at our lounge with state-of-the-art stylists customized to your shape.
+                        Schedule a private session at our lounge with state-of-the-art stylists customized to your
+                        shape.
                     </p>
                 </div>
 
                 <!-- Card 2: Free Alterations -->
-                <div class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
-                    <div class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                <div
+                    class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
+                    <div
+                        class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
                         <i class="fa-solid fa-scissors text-xl"></i>
                     </div>
                     <h3 class="editorial-heading text-lg font-medium text-dark mb-2">Free Alterations</h3>
@@ -781,8 +877,10 @@
                 </div>
 
                 <!-- Card 3: Premium Packaging -->
-                <div class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
-                    <div class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                <div
+                    class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
+                    <div
+                        class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
                         <i class="fa-solid fa-gift text-xl"></i>
                     </div>
                     <h3 class="editorial-heading text-lg font-medium text-dark mb-2">Premium Packaging</h3>
@@ -792,8 +890,10 @@
                 </div>
 
                 <!-- Card 4: Fast Delivery -->
-                <div class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
-                    <div class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                <div
+                    class="flex flex-col items-center text-center p-8 bg-primary rounded border border-transparent hover:border-accent/30 hover:shadow-lg transition-all duration-500 group">
+                    <div
+                        class="w-16 h-16 rounded-full border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
                         <i class="fa-solid fa-truck-fast text-xl"></i>
                     </div>
                     <h3 class="editorial-heading text-lg font-medium text-dark mb-2">Express Delivery</h3>
@@ -809,112 +909,98 @@
     <!-- SECTION 08: FASHION INSPIRATION LOOKBOOK -->
     <section id="inspiration" class="py-20 lg:py-32 bg-primary">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
+
             <div class="text-center max-w-xl mx-auto mb-16 space-y-4">
-                <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block">CURATED EDITORIAL</span>
-                <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Shop The Complete Look</h2>
+                <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block">CURATED
+                    EDITORIAL</span>
+                <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Shop The Complete
+                    Look</h2>
                 <div class="h-[2px] w-12 bg-accent mx-auto"></div>
                 <p class="text-sm text-dark/60 font-light leading-relaxed">
-                    Click the gold hotspots to instantly discover and collect every single product featured in our professional editorial sets.
+                    Click the gold hotspots to instantly discover and collect every single product featured in our
+                    professional editorial sets.
                 </p>
             </div>
 
             <!-- Pinterest-inspired Lookbook Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
-                
+
                 <!-- Look 1: Cozy Executive -->
                 <div class="relative overflow-hidden rounded shadow-md group">
-                    <img 
-                        data-img-key="lookbook.look_1_cozy_executive"
-                        src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" 
-                        alt="Look 1 Cozy Executive" 
-                        class="w-full object-cover h-[500px]"
-                        loading="lazy"
-                    >
+                    <img data-img-key="lookbook.look_1_cozy_executive"
+                        src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80"
+                        alt="Look 1 Cozy Executive" class="w-full object-cover h-[500px]" loading="lazy">
                     <!-- Hotspot 1 -->
-                    <button 
-                        onclick="openShopTheLook('Classic Camel Felt Hat', '$140.00', 'Elegant pure virgin wool classic brim hat.', this.closest('.relative').querySelector('img').src)" 
+                    <button
+                        onclick="openShopTheLook('Classic Camel Felt Hat', '$140.00', 'Elegant pure virgin wool classic brim hat.', this.closest('.relative').querySelector('img').src)"
                         class="absolute top-[20%] left-[50%] w-6 h-6 rounded-full bg-accent/80 text-white flex items-center justify-center text-xs hotspot-pulse focus:outline-none"
-                        aria-label="Shop Classic Camel Felt Hat"
-                    >
+                        aria-label="Shop Classic Camel Felt Hat">
                         <i class="fa-solid fa-plus text-[10px]"></i>
                     </button>
                     <!-- Hotspot 2 -->
-                    <button 
-                        onclick="openShopTheLook('Chunky Knit Cable Coat', '$380.00', 'Woven loose pattern heavy wool cardigan.', this.closest('.relative').querySelector('img').src)" 
+                    <button
+                        onclick="openShopTheLook('Chunky Knit Cable Coat', '$380.00', 'Woven loose pattern heavy wool cardigan.', this.closest('.relative').querySelector('img').src)"
                         class="absolute top-[50%] left-[40%] w-6 h-6 rounded-full bg-accent/80 text-white flex items-center justify-center text-xs hotspot-pulse focus:outline-none"
-                        aria-label="Shop Chunky Knit Cable Coat"
-                    >
+                        aria-label="Shop Chunky Knit Cable Coat">
                         <i class="fa-solid fa-plus text-[10px]"></i>
                     </button>
                     <!-- Label Overlay -->
-                    <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
+                    <div
+                        class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
                         Look 01: Cozy Executive
                     </div>
                 </div>
 
                 <!-- Look 2: Ethereal Riviera -->
                 <div class="relative overflow-hidden rounded shadow-md group mt-0 md:mt-12">
-                    <img 
-                        data-img-key="lookbook.look_2_ethereal_riviera"
-                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" 
-                        alt="Look 2 Ethereal Riviera" 
-                        class="w-full object-cover h-[580px]"
-                        loading="lazy"
-                    >
+                    <img data-img-key="lookbook.look_2_ethereal_riviera"
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80"
+                        alt="Look 2 Ethereal Riviera" class="w-full object-cover h-[580px]" loading="lazy">
                     <!-- Hotspot 1 -->
-                    <button 
-                        onclick="openShopTheLook('Ethereal Silk Sun Shirt', '$190.00', 'Oversized luxury silk linen beach shirt.', this.closest('.relative').querySelector('img').src)" 
+                    <button
+                        onclick="openShopTheLook('Ethereal Silk Sun Shirt', '$190.00', 'Oversized luxury silk linen beach shirt.', this.closest('.relative').querySelector('img').src)"
                         class="absolute top-[35%] left-[45%] w-6 h-6 rounded-full bg-accent/80 text-white flex items-center justify-center text-xs hotspot-pulse focus:outline-none"
-                        aria-label="Shop Ethereal Silk Sun Shirt"
-                    >
+                        aria-label="Shop Ethereal Silk Sun Shirt">
                         <i class="fa-solid fa-plus text-[10px]"></i>
                     </button>
-                    <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
+                    <div
+                        class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
                         Look 02: Ethereal Riviera
                     </div>
                 </div>
 
                 <!-- Look 3: Velvet Evening -->
                 <div class="relative overflow-hidden rounded shadow-md group mt-0 md:-mt-8">
-                    <img 
-                        data-img-key="lookbook.look_3_velvet_evening"
-                        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" 
-                        alt="Look 3 Velvet Evening" 
-                        class="w-full object-cover h-[520px]"
-                        loading="lazy"
-                    >
+                    <img data-img-key="lookbook.look_3_velvet_evening"
+                        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80"
+                        alt="Look 3 Velvet Evening" class="w-full object-cover h-[520px]" loading="lazy">
                     <!-- Hotspot 1 -->
-                    <button 
-                        onclick="openShopTheLook('Velvet Draped Gown', '$690.00', 'A striking deep obsidian wrap evening dress.', this.closest('.relative').querySelector('img').src)" 
+                    <button
+                        onclick="openShopTheLook('Velvet Draped Gown', '$690.00', 'A striking deep obsidian wrap evening dress.', this.closest('.relative').querySelector('img').src)"
                         class="absolute top-[45%] left-[55%] w-6 h-6 rounded-full bg-accent/80 text-white flex items-center justify-center text-xs hotspot-pulse focus:outline-none"
-                        aria-label="Shop Velvet Draped Gown"
-                    >
+                        aria-label="Shop Velvet Draped Gown">
                         <i class="fa-solid fa-plus text-[10px]"></i>
                     </button>
-                    <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
+                    <div
+                        class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
                         Look 03: Velvet Evening
                     </div>
                 </div>
 
                 <!-- Look 4: Modernist Linen -->
                 <div class="relative overflow-hidden rounded shadow-md group mt-0 md:mt-4">
-                    <img 
-                        data-img-key="lookbook.look_4_modernist_linen"
-                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" 
-                        alt="Look 4 Modernist Linen" 
-                        class="w-full object-cover h-[540px]"
-                        loading="lazy"
-                    >
+                    <img data-img-key="lookbook.look_4_modernist_linen"
+                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80"
+                        alt="Look 4 Modernist Linen" class="w-full object-cover h-[540px]" loading="lazy">
                     <!-- Hotspot 1 -->
-                    <button 
-                        onclick="openShopTheLook('Monochrome Straw Tote', '$210.00', 'Hand-knitted custom-designed palm hat box.', this.closest('.relative').querySelector('img').src)" 
+                    <button
+                        onclick="openShopTheLook('Monochrome Straw Tote', '$210.00', 'Hand-knitted custom-designed palm hat box.', this.closest('.relative').querySelector('img').src)"
                         class="absolute top-[75%] left-[35%] w-6 h-6 rounded-full bg-accent/80 text-white flex items-center justify-center text-xs hotspot-pulse focus:outline-none"
-                        aria-label="Shop Monochrome Straw Tote"
-                    >
+                        aria-label="Shop Monochrome Straw Tote">
                         <i class="fa-solid fa-plus text-[10px]"></i>
                     </button>
-                    <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
+                    <div
+                        class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 border border-secondary text-[11px] tracking-wider uppercase font-medium">
                         Look 04: Modernist Linen
                     </div>
                 </div>
@@ -925,22 +1011,27 @@
 
     <!-- SECTION 09: CUSTOMER LOVE -->
     <section class="py-20 lg:py-32 bg-secondary relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(234,200,200,0.15),transparent)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(234,200,200,0.15),transparent)]">
+        </div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            
+
             <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block mb-2">AURA LOYALS</span>
             <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark mb-16">Customer Love</h2>
 
             <!-- Testimonial Slider Container -->
             <div class="relative h-64 md:h-56">
-                
+
                 <!-- Slide 1 -->
-                <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 flex flex-col items-center justify-center space-y-6">
+                <div
+                    class="testimonial-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 flex flex-col items-center justify-center space-y-6">
                     <p class="editorial-heading text-lg sm:text-2xl text-dark/80 italic leading-relaxed max-w-3xl">
-                        "The Ivory Silk Jumpsuit is the finest piece of clothing in my wardrobe. The drapery is flawless and the customer hospitality was reminiscent of Milan boutiques."
+                        "The Ivory Silk Jumpsuit is the finest piece of clothing in my wardrobe. The drapery is flawless
+                        and the customer hospitality was reminiscent of Milan boutiques."
                     </p>
                     <div class="flex items-center gap-1 text-accent text-xs">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
                     </div>
                     <div class="text-xs tracking-[0.15em] font-medium text-dark flex items-center gap-3">
                         <span class="font-semibold uppercase">Elena Rostova</span>
@@ -949,12 +1040,16 @@
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex flex-col items-center justify-center space-y-6">
+                <div
+                    class="testimonial-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex flex-col items-center justify-center space-y-6">
                     <p class="editorial-heading text-lg sm:text-2xl text-dark/80 italic leading-relaxed max-w-3xl">
-                        "Unrivalled fabrics. I wore the Evening Glamour dress to a film gala and received endless compliments. Aura is now my default couture standard."
+                        "Unrivalled fabrics. I wore the Evening Glamour dress to a film gala and received endless
+                        compliments. Aura is now my default couture standard."
                     </p>
                     <div class="flex items-center gap-1 text-accent text-xs">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
                     </div>
                     <div class="text-xs tracking-[0.15em] font-medium text-dark flex items-center gap-3">
                         <span class="font-semibold uppercase">Claire Dubois</span>
@@ -963,12 +1058,16 @@
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex flex-col items-center justify-center space-y-6">
+                <div
+                    class="testimonial-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex flex-col items-center justify-center space-y-6">
                     <p class="editorial-heading text-lg sm:text-2xl text-dark/80 italic leading-relaxed max-w-3xl">
-                        "Their personal styling session in London absolutely refined my corporate style footprint. Highly professional, responsive, and incredibly warm styling staff."
+                        "Their personal styling session in London absolutely refined my corporate style footprint.
+                        Highly professional, responsive, and incredibly warm styling staff."
                     </p>
                     <div class="flex items-center gap-1 text-accent text-xs">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
                     </div>
                     <div class="text-xs tracking-[0.15em] font-medium text-dark flex items-center gap-3">
                         <span class="font-semibold uppercase">Sophia Mercer</span>
@@ -980,9 +1079,12 @@
 
             <!-- Dot Indicators -->
             <div class="flex justify-center items-center gap-3 mt-12">
-                <button onclick="setTestimonial(0)" class="test-dot w-2 h-2 rounded-full bg-accent transition-all duration-300"></button>
-                <button onclick="setTestimonial(1)" class="test-dot w-2 h-2 rounded-full bg-accent/30 transition-all duration-300"></button>
-                <button onclick="setTestimonial(2)" class="test-dot w-2 h-2 rounded-full bg-accent/30 transition-all duration-300"></button>
+                <button onclick="setTestimonial(0)"
+                    class="test-dot w-2 h-2 rounded-full bg-accent transition-all duration-300"></button>
+                <button onclick="setTestimonial(1)"
+                    class="test-dot w-2 h-2 rounded-full bg-accent/30 transition-all duration-300"></button>
+                <button onclick="setTestimonial(2)"
+                    class="test-dot w-2 h-2 rounded-full bg-accent/30 transition-all duration-300"></button>
             </div>
 
         </div>
@@ -991,64 +1093,103 @@
     <!-- SECTION 10: INSTAGRAM LIFESTYLE -->
     <section class="py-20 bg-primary">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
+
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                 <div>
-                    <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block mb-2">DIGITAL ATRIUM</span>
-                    <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Instagram Lifestyle</h2>
+                    <span class="text-xs uppercase tracking-[0.3em] text-accent font-semibold block mb-2">DIGITAL
+                        ATRIUM</span>
+                    <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Instagram
+                        Lifestyle</h2>
                 </div>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-widest text-accent hover:text-dark font-semibold border-b border-accent pb-1 transition-colors">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="text-xs uppercase tracking-widest text-accent hover:text-dark font-semibold border-b border-accent pb-1 transition-colors">
                     @AURA_BOUTIQUE
                 </a>
             </div>
 
             <!-- Perfectly Aligned Aligned Image Grid (6 columns) -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                
+
                 <!-- Instagram Card 1 -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden rounded aspect-square block bg-secondary">
-                    <img data-img-key="instagram.0" src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=400&q=80" alt="Instagram Post 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="group relative overflow-hidden rounded aspect-square block bg-secondary">
+                    <img data-img-key="instagram.0"
+                        src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=400&q=80"
+                        alt="Instagram Post 1"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
                         <i class="fa-brands fa-instagram text-white text-2xl"></i>
                     </div>
                 </a>
 
                 <!-- Instagram Card 2 -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden rounded aspect-square block bg-secondary">
-                    <img data-img-key="instagram.1" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=400&q=80" alt="Instagram Post 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="group relative overflow-hidden rounded aspect-square block bg-secondary">
+                    <img data-img-key="instagram.1"
+                        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=400&q=80"
+                        alt="Instagram Post 2"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
                         <i class="fa-brands fa-instagram text-white text-2xl"></i>
                     </div>
                 </a>
 
                 <!-- Instagram Card 3 -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden rounded aspect-square block bg-secondary">
-                    <img data-img-key="instagram.2" src="https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=400&q=80" alt="Instagram Post 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="group relative overflow-hidden rounded aspect-square block bg-secondary">
+                    <img data-img-key="instagram.2"
+                        src="https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=400&q=80"
+                        alt="Instagram Post 3"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
                         <i class="fa-brands fa-instagram text-white text-2xl"></i>
                     </div>
                 </a>
 
                 <!-- Instagram Card 4 -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden rounded aspect-square block bg-secondary">
-                    <img data-img-key="instagram.3" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80" alt="Instagram Post 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="group relative overflow-hidden rounded aspect-square block bg-secondary">
+                    <img data-img-key="instagram.3"
+                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80"
+                        alt="Instagram Post 4"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
                         <i class="fa-brands fa-instagram text-white text-2xl"></i>
                     </div>
                 </a>
 
                 <!-- Instagram Card 5 -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden rounded aspect-square block bg-secondary">
-                    <img data-img-key="instagram.4" src="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?auto=format&fit=crop&w=400&q=80" alt="Instagram Post 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="group relative overflow-hidden rounded aspect-square block bg-secondary">
+                    <img data-img-key="instagram.4"
+                        src="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?auto=format&fit=crop&w=400&q=80"
+                        alt="Instagram Post 5"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
                         <i class="fa-brands fa-instagram text-white text-2xl"></i>
                     </div>
                 </a>
 
                 <!-- Instagram Card 6 -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden rounded aspect-square block bg-secondary">
-                    <img data-img-key="instagram.5" src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=400&q=80" alt="Instagram Post 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="group relative overflow-hidden rounded aspect-square block bg-secondary">
+                    <img data-img-key="instagram.5"
+                        src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=400&q=80"
+                        alt="Instagram Post 6"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-[3px] border-accent m-2">
                         <i class="fa-brands fa-instagram text-white text-2xl"></i>
                     </div>
                 </a>
@@ -1060,26 +1201,28 @@
     <!-- SECTION 11: NEWSLETTER (FABRIC-INSPIRED TEXTURED FEEL) -->
     <section class="py-24 bg-secondary relative overflow-hidden">
         <!-- Fabric Subtle Mesh Line Decorations -->
-        <div class="absolute inset-0 opacity-[0.03] select-none pointer-events-none bg-[linear-gradient(rgba(0,0,0,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.8)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-        
+        <div
+            class="absolute inset-0 opacity-[0.03] select-none pointer-events-none bg-[linear-gradient(rgba(0,0,0,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.8)_1px,transparent_1px)] bg-[size:20px_20px]">
+        </div>
+
         <div class="relative max-w-3xl mx-auto px-6 text-center z-10 space-y-6">
-            <span class="text-xs uppercase tracking-[0.35em] text-accent font-semibold block">EXCLUSIVE MEMBERSHIP</span>
-            <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Become Part of Our Fashion Circle</h2>
+            <span class="text-xs uppercase tracking-[0.35em] text-accent font-semibold block">EXCLUSIVE
+                MEMBERSHIP</span>
+            <h2 class="editorial-heading text-3xl sm:text-4xl lg:text-5xl text-dark font-medium">Become Part of Our
+                Fashion Circle</h2>
             <div class="h-[1px] w-20 bg-accent/40 mx-auto"></div>
             <p class="text-sm text-dark/70 font-light leading-relaxed max-w-lg mx-auto">
-                Recieve private allocations, custom VIP event coordinates, and premium design collection previews before official drops.
+                Recieve private allocations, custom VIP event coordinates, and premium design collection previews before
+                official drops.
             </p>
-            
+
             <!-- Email Form -->
-            <form onsubmit="handleNewsletterSubmit(event)" class="pt-6 max-w-md mx-auto flex flex-col sm:flex-row items-stretch gap-3">
-                <input 
-                    type="email" 
-                    id="newsletter-email"
-                    placeholder="Enter your email address" 
-                    required
-                    class="w-full px-5 py-4 bg-primary border border-dark/15 text-sm rounded-sm focus:outline-none focus:border-accent font-light"
-                >
-                <button type="submit" class="bg-accent hover:bg-accentDark text-white text-xs uppercase tracking-[0.2em] px-8 py-4 font-semibold transition-colors duration-300">
+            <form onsubmit="handleNewsletterSubmit(event)"
+                class="pt-6 max-w-md mx-auto flex flex-col sm:flex-row items-stretch gap-3">
+                <input type="email" id="newsletter-email" placeholder="Enter your email address" required
+                    class="w-full px-5 py-4 bg-primary border border-dark/15 text-sm rounded-sm focus:outline-none focus:border-accent font-light">
+                <button type="submit"
+                    class="bg-accent hover:bg-accentDark text-white text-xs uppercase tracking-[0.2em] px-8 py-4 font-semibold transition-colors duration-300">
                     Subscribe
                 </button>
             </form>
@@ -1088,21 +1231,27 @@
 
     <!-- SECTION 12: PREMIUM FOOTER -->
     <footer class="bg-dark text-white pt-20 pb-12 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-b border-white/10 pb-16 mb-8">
-            
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-b border-white/10 pb-16 mb-8">
+
             <!-- Column 1: About -->
             <div class="space-y-4">
                 <a href="#" class="editorial-heading text-2xl tracking-[0.15em] font-medium text-white uppercase block">
                     AURA
                 </a>
                 <p class="text-xs text-white/50 font-light leading-relaxed max-w-sm">
-                    A luxury womenswear sanctuary crafting heirloom-quality clothing that marries elegance, dignity, and fine master craftsmanship.
+                    A luxury womenswear sanctuary crafting heirloom-quality clothing that marries elegance, dignity, and
+                    fine master craftsmanship.
                 </p>
                 <div class="flex items-center gap-4 text-white/70 pt-2">
-                    <a href="https://facebook.com" class="hover:text-accent transition-colors"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                    <a href="https://instagram.com" class="hover:text-accent transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
-                    <a href="https://pinterest.com" class="hover:text-accent transition-colors"><i class="fa-brands fa-pinterest-p text-sm"></i></a>
-                    <a href="https://youtube.com" class="hover:text-accent transition-colors"><i class="fa-brands fa-youtube text-sm"></i></a>
+                    <a href="https://facebook.com" class="hover:text-accent transition-colors"><i
+                            class="fa-brands fa-facebook-f text-sm"></i></a>
+                    <a href="https://instagram.com" class="hover:text-accent transition-colors"><i
+                            class="fa-brands fa-instagram text-sm"></i></a>
+                    <a href="https://pinterest.com" class="hover:text-accent transition-colors"><i
+                            class="fa-brands fa-pinterest-p text-sm"></i></a>
+                    <a href="https://youtube.com" class="hover:text-accent transition-colors"><i
+                            class="fa-brands fa-youtube text-sm"></i></a>
                 </div>
             </div>
 
@@ -1112,8 +1261,10 @@
                 <ul class="space-y-2 text-xs text-white/60 font-light">
                     <li><a href="#collections" class="hover:text-white transition-colors">Summer Linen Chic</a></li>
                     <li><a href="#collections" class="hover:text-white transition-colors">Wedding Selection</a></li>
-                    <li><a href="#collections" class="hover:text-white transition-colors">Executive Office Haute</a></li>
-                    <li><a href="#collections" class="hover:text-white transition-colors">Evening Glamour Satins</a></li>
+                    <li><a href="#collections" class="hover:text-white transition-colors">Executive Office Haute</a>
+                    </li>
+                    <li><a href="#collections" class="hover:text-white transition-colors">Evening Glamour Satins</a>
+                    </li>
                     <li><a href="#trending" class="hover:text-white transition-colors">Signature Outerwear</a></li>
                 </ul>
             </div>
@@ -1122,7 +1273,8 @@
             <div class="space-y-4">
                 <h4 class="text-xs uppercase tracking-widest text-accent font-semibold">Customer Care</h4>
                 <ul class="space-y-2 text-xs text-white/60 font-light">
-                    <li><a href="#" onclick="showNotification('Support center loaded. Opening Chat...', 'info')" class="hover:text-white transition-colors">Contact Support</a></li>
+                    <li><a href="#" onclick="showNotification('Support center loaded. Opening Chat...', 'info')"
+                            class="hover:text-white transition-colors">Contact Support</a></li>
                     <li><a href="#" class="hover:text-white transition-colors">Sizing Consultations</a></li>
                     <li><a href="#" class="hover:text-white transition-colors">Shipping &amp; Free Returns</a></li>
                     <li><a href="#" class="hover:text-white transition-colors">Boutique Alteration Guide</a></li>
@@ -1146,7 +1298,8 @@
         </div>
 
         <!-- Copyright Block -->
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 font-light gap-4">
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 font-light gap-4">
             <p>© 2026 AURA COUTURE. ALL RIGHTS RESERVED.</p>
             <div class="flex items-center gap-6">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -1157,7 +1310,8 @@
     </footer>
 
     <!-- STICKY BOTTOM NAVIGATION BAR FOR MOBILE EXPERIENCE -->
-    <div class="fixed bottom-0 inset-x-0 bg-primary/95 border-t border-secondary py-3 px-6 flex justify-around items-center lg:hidden z-30 backdrop-blur-md">
+    <div
+        class="fixed bottom-0 inset-x-0 bg-primary/95 border-t border-secondary py-3 px-6 flex justify-around items-center lg:hidden z-30 backdrop-blur-md">
         <a href="#collections" class="flex flex-col items-center gap-1 text-dark/70 hover:text-accent">
             <i class="fa-solid fa-compass text-sm"></i>
             <span class="text-[8px] uppercase tracking-widest font-medium">Explore</span>
@@ -1166,14 +1320,16 @@
             <i class="fa-solid fa-fire text-sm"></i>
             <span class="text-[8px] uppercase tracking-widest font-medium">Trending</span>
         </a>
-        <button onclick="toggleStylingModal()" class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center -mt-6 border-4 border-primary shadow-lg hover:bg-accentDark">
+        <button onclick="toggleStylingModal()"
+            class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center -mt-6 border-4 border-primary shadow-lg hover:bg-accentDark">
             <i class="fa-solid fa-calendar-check text-xs"></i>
         </button>
         <a href="#inspiration" class="flex flex-col items-center gap-1 text-dark/70 hover:text-accent">
             <i class="fa-solid fa-shirt text-sm"></i>
             <span class="text-[8px] uppercase tracking-widest font-medium">Outfits</span>
         </a>
-        <button onclick="showNotification('Opening shopping cart...', 'info')" class="flex flex-col items-center gap-1 text-dark/70 hover:text-accent">
+        <button onclick="showNotification('Opening shopping cart...', 'info')"
+            class="flex flex-col items-center gap-1 text-dark/70 hover:text-accent">
             <i class="fa-solid fa-bag-shopping text-sm"></i>
             <span class="text-[8px] uppercase tracking-widest font-medium">Cart</span>
         </button>
@@ -1186,9 +1342,11 @@
             <div class="fixed inset-0 bg-dark/70 backdrop-blur-sm transition-opacity" onclick="closeQuickView()"></div>
 
             <!-- Modal Panel content -->
-            <div class="relative bg-primary text-dark max-w-4xl w-full text-left shadow-2xl rounded overflow-hidden z-10 flex flex-col md:flex-row transform scale-95 transition-transform duration-300">
+            <div
+                class="relative bg-primary text-dark max-w-4xl w-full text-left shadow-2xl rounded overflow-hidden z-10 flex flex-col md:flex-row transform scale-95 transition-transform duration-300">
                 <!-- Close Button -->
-                <button onclick="closeQuickView()" class="absolute top-4 right-4 z-20 text-dark/60 hover:text-dark focus:outline-none text-lg">
+                <button onclick="closeQuickView()"
+                    class="absolute top-4 right-4 z-20 text-dark/60 hover:text-dark focus:outline-none text-lg">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
 
@@ -1201,35 +1359,44 @@
                 <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-between">
                     <div class="space-y-6">
                         <div class="space-y-2">
-                            <span class="text-[10px] uppercase tracking-[0.3em] text-accent font-semibold">COUTURE DIRECT</span>
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-accent font-semibold">COUTURE
+                                DIRECT</span>
                             <h3 id="qv-title" class="editorial-heading text-2xl lg:text-3xl text-dark">Product Name</h3>
                             <p id="qv-price" class="text-lg font-semibold text-accent">$0.00</p>
                         </div>
-                        
+
                         <div class="h-[1px] w-12 bg-accent/40"></div>
-                        
+
                         <p id="qv-desc" class="text-xs text-dark/60 leading-relaxed font-light">
                             Detailed artisan quality fabric summary.
                         </p>
 
                         <!-- Size Select -->
                         <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Select Size</label>
+                            <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Select
+                                Size</label>
                             <div class="flex gap-2">
-                                <button onclick="selectSize(this)" class="w-10 h-10 border border-dark/10 hover:border-accent text-xs rounded transition-all">XS</button>
-                                <button onclick="selectSize(this)" class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all">S</button>
-                                <button onclick="selectSize(this)" class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all bg-accent text-white font-semibold">M</button>
-                                <button onclick="selectSize(this)" class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all">L</button>
-                                <button onclick="selectSize(this)" class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all">XL</button>
+                                <button onclick="selectSize(this)"
+                                    class="w-10 h-10 border border-dark/10 hover:border-accent text-xs rounded transition-all">XS</button>
+                                <button onclick="selectSize(this)"
+                                    class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all">S</button>
+                                <button onclick="selectSize(this)"
+                                    class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all bg-accent text-white font-semibold">M</button>
+                                <button onclick="selectSize(this)"
+                                    class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all">L</button>
+                                <button onclick="selectSize(this)"
+                                    class="w-10 h-10 border border-dark/15 hover:border-accent text-xs rounded transition-all">XL</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="space-y-4 pt-6 md:pt-0">
-                        <button onclick="addToBagFromQuickView()" class="w-full bg-dark hover:bg-accent text-white py-4 uppercase text-xs tracking-widest font-semibold transition-colors rounded shadow-sm">
+                        <button onclick="addToBagFromQuickView()"
+                            class="w-full bg-dark hover:bg-accent text-white py-4 uppercase text-xs tracking-widest font-semibold transition-colors rounded shadow-sm">
                             Add to Shopping Bag
                         </button>
-                        <div class="flex items-center justify-center gap-6 text-[10px] text-dark/40 tracking-wider uppercase font-medium">
+                        <div
+                            class="flex items-center justify-center gap-6 text-[10px] text-dark/40 tracking-wider uppercase font-medium">
                             <span><i class="fa-solid fa-lock text-accent mr-1"></i> Secure Checkout</span>
                             <span><i class="fa-solid fa-arrows-rotate text-accent mr-1"></i> Free Returns</span>
                         </div>
@@ -1245,13 +1412,16 @@
             <div class="fixed inset-0 bg-dark/70 backdrop-blur-sm" onclick="toggleStylingModal()"></div>
 
             <!-- Form Frame -->
-            <div class="relative bg-primary text-dark max-w-lg w-full p-8 md:p-12 shadow-2xl rounded text-left z-10 space-y-6 transform scale-95 transition-transform">
-                <button onclick="toggleStylingModal()" class="absolute top-4 right-4 text-dark/60 hover:text-dark text-lg">
+            <div
+                class="relative bg-primary text-dark max-w-lg w-full p-8 md:p-12 shadow-2xl rounded text-left z-10 space-y-6 transform scale-95 transition-transform">
+                <button onclick="toggleStylingModal()"
+                    class="absolute top-4 right-4 text-dark/60 hover:text-dark text-lg">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
 
                 <div class="text-center space-y-2">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-accent font-semibold block">ATELIER PRIVÉ</span>
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-accent font-semibold block">ATELIER
+                        PRIVÉ</span>
                     <h3 class="editorial-heading text-2xl lg:text-3xl text-dark">Book Personal Styling</h3>
                     <div class="h-[1px] w-12 bg-accent/40 mx-auto"></div>
                     <p class="text-xs text-dark/60 font-light">
@@ -1262,23 +1432,32 @@
                 <!-- Form Fields -->
                 <form onsubmit="handleStylingSubmit(event)" class="space-y-4">
                     <div class="space-y-1">
-                        <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Full Name</label>
-                        <input type="text" required class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
+                        <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Full
+                            Name</label>
+                        <input type="text" required
+                            class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
                     </div>
 
                     <div class="space-y-1">
-                        <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Email Address</label>
-                        <input type="email" required class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
+                        <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Email
+                            Address</label>
+                        <input type="email" required
+                            class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-1">
-                            <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Preferred Date</label>
-                            <input type="date" required class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
+                            <label
+                                class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Preferred
+                                Date</label>
+                            <input type="date" required
+                                class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
                         </div>
                         <div class="space-y-1">
-                            <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Location</label>
-                            <select class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
+                            <label
+                                class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Location</label>
+                            <select
+                                class="w-full px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none">
                                 <option>AURA Mayfair (London)</option>
                                 <option>AURA Place Vendôme (Paris)</option>
                                 <option>Virtual Video Atelier</option>
@@ -1287,11 +1466,14 @@
                     </div>
 
                     <div class="space-y-1">
-                        <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Style Notes (Optional)</label>
-                        <textarea placeholder="e.g. Seeking Summer linen pieces or resort wear" class="w-full h-20 px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none resize-none"></textarea>
+                        <label class="text-[10px] uppercase tracking-widest text-dark/60 font-semibold block">Style
+                            Notes (Optional)</label>
+                        <textarea placeholder="e.g. Seeking Summer linen pieces or resort wear"
+                            class="w-full h-20 px-4 py-3 border border-dark/10 bg-secondary/30 focus:border-accent text-xs rounded focus:outline-none resize-none"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-accent hover:bg-accentDark text-white py-4 uppercase text-xs tracking-widest font-semibold transition-colors mt-2 rounded">
+                    <button type="submit"
+                        class="w-full bg-accent hover:bg-accentDark text-white py-4 uppercase text-xs tracking-widest font-semibold transition-colors mt-2 rounded">
                         Request Atelier Booking
                     </button>
                 </form>
@@ -1300,7 +1482,8 @@
     </div>
 
     <!-- SHOP THE LOOK DOCK OVERLAY POPUP -->
-    <div id="shop-look-popup" class="fixed bottom-6 left-6 right-6 md:left-auto md:right-12 max-w-sm bg-primary/95 backdrop-blur-md border border-accent/20 p-5 rounded-lg shadow-2xl z-40 hidden transform translate-y-4 transition-all duration-300">
+    <div id="shop-look-popup"
+        class="fixed bottom-6 left-6 right-6 md:left-auto md:right-12 max-w-sm bg-primary/95 backdrop-blur-md border border-accent/20 p-5 rounded-lg shadow-2xl z-40 hidden transform translate-y-4 transition-all duration-300">
         <button onclick="closeShopTheLook()" class="absolute top-2 right-2 text-dark/50 hover:text-dark">
             <i class="fa-solid fa-xmark text-xs"></i>
         </button>
@@ -1314,7 +1497,8 @@
                     <p id="stl-price" class="text-xs text-accent font-semibold mt-1">$0.00</p>
                     <p id="stl-desc" class="text-[10px] text-dark/60 mt-1 line-clamp-2">Brief feature description.</p>
                 </div>
-                <button onclick="addLookItemToBag()" class="w-full text-left text-[10px] uppercase tracking-widest text-accent hover:text-dark font-semibold mt-2 transition-colors">
+                <button onclick="addLookItemToBag()"
+                    class="w-full text-left text-[10px] uppercase tracking-widest text-accent hover:text-dark font-semibold mt-2 transition-colors">
                     Add To Bag <i class="fa-solid fa-arrow-right-long ml-1"></i>
                 </button>
             </div>
@@ -1338,7 +1522,7 @@
         // Mobile Menu Toggling
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         mobileMenuBtn.addEventListener('click', () => {
             toggleMobileMenu();
         });
@@ -1351,7 +1535,7 @@
         function showNotification(message, type = 'success') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            
+
             let iconClass = 'fa-circle-check text-green-600';
             let bgClass = 'bg-white border-green-200';
             if (type === 'info') {
@@ -1367,9 +1551,9 @@
                 <i class="fa-solid ${iconClass} text-sm"></i>
                 <span class="text-xs tracking-wider text-dark/80 font-medium">${message}</span>
             `;
-            
+
             container.appendChild(toast);
-            
+
             setTimeout(() => {
                 toast.classList.add('opacity-0', 'transition-all', 'duration-500', '-translate-y-2');
                 setTimeout(() => toast.remove(), 500);
@@ -1465,7 +1649,7 @@
             document.getElementById('qv-price').innerText = price;
             document.getElementById('qv-img').src = imgSrc;
             document.getElementById('qv-desc').innerText = description;
-            
+
             const modal = document.getElementById('quick-view-modal');
             modal.classList.remove('hidden');
         }
@@ -1496,7 +1680,7 @@
             document.getElementById('stl-price').innerText = price;
             document.getElementById('stl-desc').innerText = desc;
             document.getElementById('stl-img').src = imgSrc;
-            
+
             const popup = document.getElementById('shop-look-popup');
             popup.classList.remove('hidden');
             popup.classList.remove('translate-y-4', 'opacity-0');
@@ -1522,7 +1706,7 @@
                 const response = await fetch('images.json');
                 if (!response.ok) throw new Error('Could not load images.json');
                 const images = await response.json();
-                
+
                 const elements = document.querySelectorAll('[data-img-key]');
                 elements.forEach(el => {
                     const key = el.getAttribute('data-img-key');
@@ -1544,4 +1728,5 @@
     </script>
 
 </body>
+
 </html>
