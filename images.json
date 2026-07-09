@@ -21,8 +21,8 @@
   },
   "trending_this_week": {
     "silk_evening_slip": {
-      "primary": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80",
-      "secondary": "https://images.unsplash.com/photo-1551854838-212c50b4c184?auto=format&fit=crop&w=500&q=80"
+      "primary": "https://i.pinimg.com/736x/8d/e9/8d/8de98ddbd427918ca907ce372f5bed21.jpg",
+      "secondary": "https://i.pinimg.com/736x/8a/b5/11/8ab511771e96698c6c799216d17d25c8.jpg"
     },
     "pleated_crepe_top": {
       "primary": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80",
@@ -38,17 +38,17 @@
     }
   },
   "lookbook": {
-    "look_1_cozy_executive": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80",
-    "look_2_ethereal_riviera": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80",
-    "look_3_velvet_evening": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80",
-    "look_4_modernist_linen": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80"
+    "look_1_cozy_executive": "https://i.pinimg.com/736x/f3/9c/c8/f39cc82ce968470b6dc80e7b1ce20ccd.jpg",
+    "look_2_ethereal_riviera": "https://i.pinimg.com/1200x/bf/4f/36/bf4f362d90bafcaf68a65a497b91e526.jpg",
+    "look_3_velvet_evening": "https://i.pinimg.com/736x/90/ad/b7/90adb749bf5dbfd17c4f10a58a78716f.jpg",
+    "look_4_modernist_linen": "https://i.pinimg.com/736x/44/82/d1/4482d10a0fd68738f4f77d32e962e482.jpg"
   },
   "instagram": [
-    "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1505022610485-0249ba5b3675?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=400&q=80"
+    "https://i.pinimg.com/736x/e8/4f/58/e84f58e3ef7ab00ae9a495f6bb31c6d1.jpg",
+    "https://i.pinimg.com/736x/f3/fa/92/f3fa92ef9dc56d85dd88507493d80926.jpg",
+    "https://i.pinimg.com/736x/00/76/6e/00766ef8d69fa9f1efe0c29f73019eb9.jpg",
+    "https://images.unsplash.com/photo-1510743827575-6cd71a9a2ab9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNob3BwaW5nfGVufDB8fDB8fHww",
+    "https://plus.unsplash.com/premium_photo-1755422107149-e47860ae16bb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   ]
 }
